@@ -1,0 +1,109 @@
+---
+layout: base.njk
+title: Newsletter
+---
+
+{% block head %}
+<style>
+    .newsletter-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        color: var(--primary-color);
+    }
+
+    .newsletter-content p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .features {
+        margin: 3rem 0;
+    }
+
+    .feature {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+    }
+
+    .feature-icon {
+        font-size: 1.5rem;
+        margin-right: 1rem;
+        color: var(--primary-color);
+    }
+
+    .newsletter-form {
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 8px;
+        margin-top: 2rem;
+    }
+
+    .form-group {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .form-group input {
+        flex: 1;
+        padding: 0.75rem;
+        border: 2px solid #eee;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+
+    .form-group button {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 0.75rem 2rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="newsletter-content">
+    <h1>Weekly Healthcare Innovation Newsletter</h1>
+    <p>Join thousands of healthcare professionals who receive my weekly insights on healthcare innovation, technology, and entrepreneurship.</p>
+
+    <div class="features">
+        <div class="feature">
+            <span class="feature-icon">💡</span>
+            <div>
+                <h3>Actionable Insights</h3>
+                <p>Get practical strategies and tips you can implement immediately in your healthcare practice or business.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <span class="feature-icon">🚀</span>
+            <div>
+                <h3>Innovation Updates</h3>
+                <p>Stay ahead of the curve with the latest developments in healthcare technology and digital transformation.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <span class="feature-icon">🔍</span>
+            <div>
+                <h3>Case Studies</h3>
+                <p>Learn from real-world examples of successful healthcare entrepreneurs and innovators.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="newsletter-form">
+        <h2>Join the Community</h2>
+        <p>Get weekly insights delivered straight to your inbox. No fluff, just valuable content.</p>
+        <div class="form-group">
+            <input type="email" placeholder="Your Email Address">
+            <button type="submit">Subscribe Now</button>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Join thousands of healthcare professionals already subscribed!</p>
+    </div>
+</div>
+{% endblock %} 

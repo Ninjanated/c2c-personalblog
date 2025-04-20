@@ -1,7 +1,168 @@
----
-layout: base.njk
-title: Home
----
-<h1>Welcome to Clinician to Coder</h1>
-<p>A blog about the journey of healthcare professionals learning to code.</p>
-<p>Check out my latest posts in the <a href="/blog">blog section</a>.</p> 
+{% extends "base.njk" %}
+
+{% block head %}
+<style>
+    .hero {
+        text-align: center;
+        padding: 6rem 0;
+        background: linear-gradient(to bottom, rgba(137, 207, 240, 0.1), transparent);
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        font-weight: 800;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        color: #666;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+    }
+
+    .newsletter-box {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        margin: 0 auto 2rem;
+    }
+
+    .newsletter-box h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--text-color);
+    }
+
+    .tagline {
+        color: #666;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .newsletter-form {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .newsletter-form input[type="email"] {
+        flex: 1;
+        padding: 0.75rem 1rem;
+        border: 2px solid #eee;
+        border-radius: 6px;
+        font-size: 1rem;
+        transition: border-color 0.2s;
+    }
+
+    .newsletter-form input[type="email"]:focus {
+        outline: none;
+        border-color: var(--primary-color);
+    }
+
+    .newsletter-form button {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+    .newsletter-form button:hover {
+        background-color: var(--secondary-color);
+    }
+
+    .recommended-articles {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .recommended-articles h3 {
+        font-size: 1.2rem;
+        color: var(--text-color);
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .article-list {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+    }
+
+    .article-list li {
+        margin-bottom: 0.75rem;
+        padding: 0.5rem;
+        border-radius: 6px;
+        transition: background-color 0.2s;
+    }
+
+    .article-list li:hover {
+        background-color: rgba(137, 207, 240, 0.1);
+    }
+
+    .article-list a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+        display: block;
+    }
+
+    .article-list a:hover {
+        color: var(--secondary-color);
+    }
+
+    @media (max-width: 768px) {
+        .hero {
+            padding: 4rem 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+        }
+
+        .newsletter-form {
+            flex-direction: column;
+        }
+
+        .newsletter-box, .recommended-articles {
+            margin: 0 1rem 2rem;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Welcome to Clinician to Creator</h1>
+    <p>Join me on my journey from medicine to tech entrepreneurship. I share insights, experiences, and lessons learned along the way.</p>
+    
+    <div class="newsletter-box">
+        <h2>Subscribe to My Newsletter</h2>
+        <p class="tagline">Get weekly updates on healthcare innovation, tech insights, and entrepreneurship tips.</p>
+        <form class="newsletter-form" action="/subscribe" method="POST">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
+    <div class="recommended-articles">
+        <h3>Best articles to start with:</h3>
+        <ul class="article-list">
+            <li><a href="/posts/why-i-started-coding/">Why I Started Learning to Code as a Clinician</a></li>
+            <li><a href="/posts/learning-resources/">Best Learning Resources for Clinicians Starting to Code</a></li>
+            <li><a href="/posts/building-first-project/">Building My First Healthcare App - Lessons Learned</a></li>
+        </ul>
+    </div>
+</section>
+{% endblock %} 

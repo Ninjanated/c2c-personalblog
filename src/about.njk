@@ -1,0 +1,39 @@
+---
+layout: base.njk
+title: About
+---
+
+{% block head %}
+<style>
+    .about-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        color: var(--primary-color);
+    }
+
+    .about-content p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .highlight {
+        color: var(--primary-color);
+        font-weight: 600;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="about-content">
+    <h1>About Me</h1>
+    <p>Hi, I'm Tom Ip! I'm passionate about helping clinicians transition into the world of entrepreneurship and technology.</p>
+    
+    <p>With a background in healthcare and a deep understanding of the challenges faced by medical professionals, I've made it my mission to bridge the gap between clinical expertise and business innovation.</p>
+    
+    <p>Through my <span class="highlight">weekly newsletter</span>, I share actionable insights, strategies, and tools that help healthcare professionals build successful businesses and leverage technology to make a broader impact.</p>
+    
+    <p>When I'm not writing or consulting, you can find me speaking at healthcare innovation conferences, mentoring aspiring healthtech entrepreneurs, or exploring the latest developments in digital health.</p>
+    
+    <p>Join me on this journey of transformation and innovation in healthcare!</p>
+</div>
+{% endblock %} 

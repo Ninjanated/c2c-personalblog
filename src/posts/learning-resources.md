@@ -1,5 +1,5 @@
 ---
-layout: post.njk
+layout: post
 title: Best Learning Resources for Clinicians Starting to Code
 date: 2024-01-21
 description: Finding the right resources when starting to code can be overwhelming. Here are the ones that worked best for me.

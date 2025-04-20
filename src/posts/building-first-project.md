@@ -1,5 +1,5 @@
 ---
-layout: post.njk
+layout: post
 title: Building My First Healthcare App - Lessons Learned
 date: 2024-01-22
 description: After months of learning, I finally built my first healthcare application. Here's what I learned along the way.

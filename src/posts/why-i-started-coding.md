@@ -1,5 +1,5 @@
 ---
-layout: post.njk
+layout: post
 title: Why I Started Learning to Code as a Clinician
 date: 2024-01-20
 description: The journey from healthcare to coding might seem unusual, but it's becoming increasingly common. Here's why I made the switch.

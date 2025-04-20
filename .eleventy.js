@@ -8,6 +8,7 @@ module.exports = function(eleventyConfig) {
 
     // Copy static files directly to output
     eleventyConfig.addPassthroughCopy("src/css");
+    eleventyConfig.addPassthroughCopy("src/images");
 
     // Custom date filter
     eleventyConfig.addFilter("dateFormat", function(date) {
@@ -26,7 +27,7 @@ module.exports = function(eleventyConfig) {
             input: "src",
             output: "_site",
             includes: "_includes",
-            layouts: "_layouts"
+            layouts: "_includes"
         },
         templateFormats: ["md", "njk", "html"],
         markdownTemplateEngine: "njk",

@@ -1,23 +1,70 @@
----
-layout: base.njk
-title: Blog Posts
----
-<h1>Blog Posts</h1>
+{% extends "base.njk" %}
+
+{% block head %}
+<style>
+    .blog-posts {
+        display: grid;
+        gap: 2rem;
+    }
+
+    .blog-post {
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 1.5rem;
+        transition: transform 0.2s;
+    }
+
+    .blog-post:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .post-meta {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 0.5rem;
+    }
+
+    .post-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--text-color);
+        text-decoration: none;
+        display: block;
+    }
+
+    .post-title:hover {
+        color: var(--primary-color);
+    }
+
+    .post-excerpt {
+        color: #666;
+        margin-bottom: 1rem;
+    }
+
+    .read-more {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .read-more:hover {
+        text-decoration: underline;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<h1>Latest Posts</h1>
 
 <div class="blog-posts">
     {%- for post in collections.posts | reverse -%}
     <article class="blog-post">
-        <h2>
-            <a href="{{ post.url }}">{{ post.data.title }}</a>
-        </h2>
-        {% if post.data.date %}
-        <time datetime="{{ post.data.date | dateFormat }}">
-            {{ post.data.date | dateFormat }}
-        </time>
-        {% endif %}
-        {% if post.data.description %}
-        <p>{{ post.data.description }}</p>
-        {% endif %}
+        <div class="post-meta">{{ post.date | dateFormat }}</div>
+        <a href="{{ post.url }}" class="post-title">{{ post.data.title }}</a>
+        <p class="post-excerpt">{{ post.data.description }}</p>
+        <a href="{{ post.url }}" class="read-more">Read More →</a>
     </article>
     {%- endfor -%}
-</div> 
+</div>
+{% endblock %} 
