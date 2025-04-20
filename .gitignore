@@ -35,4 +35,12 @@ pids
 .npm
 
 # Optional eslint cache
-.eslintcache 
+.eslintcache
+
+# 11ty
+_site/
+.cache/
+dist/
+
+# Local Netlify folder
+.netlify 

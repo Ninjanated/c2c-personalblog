@@ -1,4 +1,10 @@
-# Why I Started Learning to Code as a Clinician
+---
+layout: post.njk
+title: Why I Started Learning to Code as a Clinician
+date: 2024-01-20
+description: The journey from healthcare to coding might seem unusual, but it's becoming increasingly common. Here's why I made the switch.
+tags: ['posts', 'career']
+---
 
 The journey from healthcare to coding might seem unusual, but it's becoming increasingly common. Here's why I made the switch.
 
