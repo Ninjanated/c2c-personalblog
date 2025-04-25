@@ -1,24 +1,40 @@
----
-layout: base.njk
-title: About
----
+{% extends "base.njk" %}
 
 {% block head %}
 <style>
+    .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 4rem 1rem;
+    }
+
     .about-content h1 {
         font-size: 2.5rem;
         margin-bottom: 2rem;
-        color: var(--primary-color);
+        color: var(--text-color);
+        font-weight: 800;
     }
 
     .about-content p {
         margin-bottom: 1.5rem;
         font-size: 1.1rem;
+        color: #666;
+        line-height: 1.8;
     }
 
     .highlight {
         color: var(--primary-color);
         font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+        .about-content {
+            padding: 2rem 1rem;
+        }
+
+        .about-content h1 {
+            font-size: 2rem;
+        }
     }
 </style>
 {% endblock %}
