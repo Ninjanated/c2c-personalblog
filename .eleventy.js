@@ -22,6 +22,11 @@ module.exports = function(eleventyConfig) {
     // Current year shortcode
     eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
+    // Override the default post collection to include future posts
+    eleventyConfig.addCollection("posts", function(collectionApi) {
+        return collectionApi.getFilteredByGlob("src/posts/*.md");
+    });
+
     return {
         dir: {
             input: "src",
