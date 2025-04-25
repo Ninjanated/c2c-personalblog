@@ -1,29 +1,50 @@
----
-layout: base.njk
-title: Newsletter
----
+{% extends "base.njk" %}
 
 {% block head %}
 <style>
+    .newsletter-content {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 4rem 1rem;
+    }
+
     .newsletter-content h1 {
         font-size: 2.5rem;
         margin-bottom: 2rem;
-        color: var(--primary-color);
+        color: var(--text-color);
+        text-align: center;
+        font-weight: 800;
+    }
+
+    .newsletter-columns {
+        display: grid;
+        grid-template-columns: 1fr 400px;
+        gap: 3rem;
+        align-items: start;
+    }
+
+    .newsletter-left {
+        padding-right: 2rem;
     }
 
     .newsletter-content p {
         margin-bottom: 1.5rem;
         font-size: 1.1rem;
+        color: #666;
     }
 
     .features {
-        margin: 3rem 0;
+        margin: 2rem 0;
     }
 
     .feature {
         display: flex;
         align-items: flex-start;
         margin-bottom: 2rem;
+        background: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     }
 
     .feature-icon {
@@ -32,78 +53,159 @@ title: Newsletter
         color: var(--primary-color);
     }
 
-    .newsletter-form {
-        background: #f8f9fa;
-        padding: 2rem;
-        border-radius: 8px;
-        margin-top: 2rem;
+    .feature h3 {
+        color: var(--text-color);
+        margin-bottom: 0.5rem;
     }
 
-    .form-group {
-        display: flex;
-        gap: 1rem;
-        margin-top: 1rem;
-    }
-
-    .form-group input {
-        flex: 1;
-        padding: 0.75rem;
-        border: 2px solid #eee;
-        border-radius: 4px;
+    .feature p {
+        margin-bottom: 0;
         font-size: 1rem;
     }
 
-    .form-group button {
+    .newsletter-box {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        position: sticky;
+        top: 2rem;
+    }
+
+    .newsletter-box h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--text-color);
+    }
+
+    .beehiiv-embed {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .tagline {
+        color: #666;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .newsletter-form {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .newsletter-form input[type="email"] {
+        flex: 1;
+        padding: 0.75rem 1rem;
+        border: 2px solid #eee;
+        border-radius: 6px;
+        font-size: 1rem;
+        transition: border-color 0.2s;
+    }
+
+    .newsletter-form input[type="email"]:focus {
+        outline: none;
+        border-color: var(--primary-color);
+    }
+
+    .newsletter-form button {
         background-color: var(--primary-color);
         color: white;
         border: none;
-        padding: 0.75rem 2rem;
-        border-radius: 4px;
-        cursor: pointer;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
         font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+    .newsletter-form button:hover {
+        background-color: var(--secondary-color);
+    }
+
+    @media (max-width: 900px) {
+        .newsletter-columns {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .newsletter-left {
+            padding-right: 0;
+        }
+
+        .newsletter-content {
+            padding: 2rem 1rem;
+        }
+
+        .newsletter-content h1 {
+            font-size: 2rem;
+        }
+
+        .newsletter-form {
+            flex-direction: column;
+        }
+
+        .feature {
+            margin: 0 0 1rem;
+        }
+
+        .newsletter-box {
+            position: static;
+        }
     }
 </style>
 {% endblock %}
 
 {% block content %}
 <div class="newsletter-content">
-    <h1>Weekly Healthcare Innovation Newsletter</h1>
-    <p>Join thousands of healthcare professionals who receive my weekly insights on healthcare innovation, technology, and entrepreneurship.</p>
+    <h1>Join My Newsletter</h1>
+    
+    <div class="newsletter-columns">
+        <div class="newsletter-left">
+            <p>Get weekly insights on healthcare innovation, technology, and entrepreneurship delivered straight to your inbox.</p>
 
-    <div class="features">
-        <div class="feature">
-            <span class="feature-icon">💡</span>
-            <div>
-                <h3>Actionable Insights</h3>
-                <p>Get practical strategies and tips you can implement immediately in your healthcare practice or business.</p>
+            <div class="features">
+                <div class="feature">
+                    <span class="feature-icon">💡</span>
+                    <div>
+                        <h3>Actionable Insights</h3>
+                        <p>Get practical strategies and tips you can implement immediately in your healthcare practice or business.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <span class="feature-icon">🚀</span>
+                    <div>
+                        <h3>Innovation Updates</h3>
+                        <p>Stay ahead of the curve with the latest developments in healthcare technology and digital transformation.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <span class="feature-icon">🔍</span>
+                    <div>
+                        <h3>Case Studies</h3>
+                        <p>Learn from real-world examples of successful healthcare entrepreneurs and innovators.</p>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="feature">
-            <span class="feature-icon">🚀</span>
-            <div>
-                <h3>Innovation Updates</h3>
-                <p>Stay ahead of the curve with the latest developments in healthcare technology and digital transformation.</p>
+        <div class="newsletter-box">
+            <h2>Subscribe Now</h2>
+            <div class="beehiiv-embed">
+                <iframe src="https://embeds.beehiiv.com/8ff38e24-e09b-4a6a-9a72-54364f568fdf" 
+                        data-test-id="beehiiv-embed" 
+                        width="100%" 
+                        height="320" 
+                        frameborder="0" 
+                        scrolling="no" 
+                        style="border-radius: 4px; border: 2px solid #e5e7eb; margin: 0; background-color: transparent;">
+                </iframe>
             </div>
         </div>
-
-        <div class="feature">
-            <span class="feature-icon">🔍</span>
-            <div>
-                <h3>Case Studies</h3>
-                <p>Learn from real-world examples of successful healthcare entrepreneurs and innovators.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="newsletter-form">
-        <h2>Join the Community</h2>
-        <p>Get weekly insights delivered straight to your inbox. No fluff, just valuable content.</p>
-        <div class="form-group">
-            <input type="email" placeholder="Your Email Address">
-            <button type="submit">Subscribe Now</button>
-        </div>
-        <p style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Join thousands of healthcare professionals already subscribed!</p>
     </div>
 </div>
 {% endblock %} 
